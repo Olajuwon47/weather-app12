@@ -1,11 +1,13 @@
+import { useParams } from "react-router-dom"
 import { useWeatherData } from "@/hooks/useWeatherData"
 import { CurrentWeather } from "@/components/CurrentWeather"
 import { HourlyForecast } from "@/components/HourlyForecast"
 import { DailyForecast } from "@/components/DailyForecast"
 import { Skeleton } from "@/components/ui/skeleton"
 
-const Index = () => {
-  const { currentCity, loading } = useWeatherData("new-york")
+const CityWeather = () => {
+  const { cityId } = useParams<{ cityId: string }>()
+  const { currentCity, loading } = useWeatherData(cityId)
 
   if (loading) {
     return (
@@ -22,8 +24,8 @@ const Index = () => {
   if (!currentCity) {
     return (
       <div className="text-center py-20">
-        <h2 className="text-2xl font-semibold mb-2">Weather data not available</h2>
-        <p className="text-muted-foreground">Please try again later.</p>
+        <h2 className="text-2xl font-semibold mb-2">City not found</h2>
+        <p className="text-muted-foreground">The weather data for this city is not available.</p>
       </div>
     )
   }
@@ -33,7 +35,7 @@ const Index = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         <CurrentWeather 
           data={currentCity.current} 
-          cityName={currentCity.name} 
+          cityName={`${currentCity.name}, ${currentCity.country}`} 
         />
         <div className="space-y-6">
           <HourlyForecast data={currentCity.hourly} />
@@ -43,6 +45,6 @@ const Index = () => {
       <DailyForecast data={currentCity.daily} />
     </div>
   )
-};
+}
 
-export default Index;
+export default CityWeather
