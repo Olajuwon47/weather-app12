@@ -24,9 +24,9 @@ export const DailyForecast = ({ data }: DailyForecastProps) => {
             </div>
             
             <div className="flex items-center space-x-4 text-sm">
-              <div className="text-blue-500">{day.precipitation}%</div>
+              <div className="text-weather-rainy font-medium">{day.precipitation}%</div>
               <div className="flex space-x-2">
-                <span className="font-medium">{day.high}°</span>
+                <span className="font-medium text-weather-sunny">{day.high}°</span>
                 <span className="text-muted-foreground">{day.low}°</span>
               </div>
             </div>

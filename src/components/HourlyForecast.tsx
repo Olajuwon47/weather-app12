@@ -23,7 +23,7 @@ export const HourlyForecast = ({ data }: HourlyForecastProps) => {
                 </div>
                 <WeatherIcon condition={hour.condition} className="h-6 w-6" />
                 <div className="font-medium">{hour.temp}°</div>
-                <div className="text-xs text-blue-500">
+                <div className="text-xs text-weather-rainy font-medium">
                   {hour.precipitation}%
                 </div>
               </div>

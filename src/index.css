@@ -39,12 +39,29 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Weather-specific design tokens */
-    --weather-sunny: 45 100% 70%;
-    --weather-rainy: 200 100% 50%;
-    --weather-cloudy: 220 15% 60%;
-    --weather-stormy: 280 100% 40%;
+    --weather-sunny: 45 100% 65%;
+    --weather-sunny-light: 50 100% 80%;
+    --weather-rainy: 210 100% 55%;
+    --weather-rainy-light: 215 80% 70%;
+    --weather-cloudy: 220 25% 65%;
+    --weather-cloudy-light: 225 35% 80%;
+    --weather-stormy: 270 85% 50%;
+    --weather-stormy-light: 275 70% 70%;
+    --weather-snowy: 200 50% 85%;
+    --weather-snowy-accent: 195 60% 75%;
+    --weather-foggy: 220 15% 70%;
+    
+    /* Beautiful gradients */
+    --gradient-sunny: linear-gradient(135deg, hsl(var(--weather-sunny)), hsl(var(--weather-sunny-light)));
+    --gradient-rainy: linear-gradient(135deg, hsl(var(--weather-rainy)), hsl(var(--weather-rainy-light)));
     --gradient-sky: linear-gradient(135deg, hsl(200 100% 80%), hsl(220 100% 90%));
+    --gradient-storm: linear-gradient(135deg, hsl(var(--weather-stormy)), hsl(var(--weather-stormy-light)));
+    --gradient-winter: linear-gradient(135deg, hsl(var(--weather-snowy)), hsl(var(--weather-snowy-accent)));
+    
+    /* Enhanced shadows */
     --shadow-soft: 0 4px 20px -4px hsl(200 100% 50% / 0.1);
+    --shadow-colorful: 0 8px 32px -8px hsl(var(--primary) / 0.2);
+    --shadow-weather: 0 10px 40px -10px hsl(var(--weather-sunny) / 0.3);
 
     --sidebar-background: 0 0% 98%;
 
