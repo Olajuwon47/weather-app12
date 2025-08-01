@@ -28,7 +28,7 @@ export const CurrentWeather = ({ data, cityName }: CurrentWeatherProps) => {
   }
 
   return (
-    <Card className={cn("col-span-full lg:col-span-2 shadow-colorful", getBackgroundClass())}>
+    <Card className={`col-span-full lg:col-span-2 shadow-colorful ${getBackgroundClass()}`}>
       <CardHeader>
         <CardTitle className="flex items-center justify-between text-white">
           <span>{cityName}</span>
