@@ -36,16 +36,16 @@ export function AppSidebar() {
 
   const isActive = (path: string) => currentPath === path
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "bg-primary text-primary-foreground font-medium" : "hover:bg-accent hover:text-accent-foreground"
+    isActive ? "bg-green-500 text-primary-foreground font-medium" : "hover:bg-accent hover:text-accent-foreground"
 
   return (
     <Sidebar
-      collapsible="icon"
+      collapsible="icon" 
     >
       <SidebarTrigger className="m-2 self-end" />
 
       <SidebarContent>
-        <div className="px-3 py-2">
+        <div className="px-3 py-2 ">
           <h2 className={`font-bold text-lg ${collapsed ? "sr-only" : ""}`}>
             WeatherApp
           </h2>
