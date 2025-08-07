@@ -1,5 +1,5 @@
 import { MapPin, Cloud, Sun, Eye, Settings } from "lucide-react"
-import { NavLink, useLocation } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 
 import {
   Sidebar,
@@ -12,7 +12,8 @@ import {
   SidebarMenuItem,
   SidebarTrigger,
   useSidebar,
-} from "@/components/ui/sidebar"
+} from "../components/ui/sidebar"
+import { ModeToggle } from "./ModeToggle"
 
 const navigationItems = [
   { title: "Dashboard", url: "/", icon: Cloud },
@@ -30,22 +31,19 @@ const cityItems = [
 
 export function AppSidebar() {
   const { state } = useSidebar()
-  const location = useLocation()
-  const currentPath = location.pathname
   const collapsed = state === "collapsed"
 
-  const isActive = (path: string) => currentPath === path
   const getNavCls = ({ isActive }: { isActive: boolean }) =>
-    isActive ? "bg-green-500 text-primary-foreground font-medium" : "hover:bg-accent hover:text-accent-foreground"
+    isActive ? "bg-primary text-primary-foreground font-medium" : "hover:bg-accent hover:text-accent-foreground"
 
   return (
     <Sidebar
-      collapsible="icon" 
+      collapsible="icon"
     >
       <SidebarTrigger className="m-2 self-end" />
 
       <SidebarContent>
-        <div className="px-3 py-2 ">
+        <div className="px-3 py-2">
           <h2 className={`font-bold text-lg ${collapsed ? "sr-only" : ""}`}>
             WeatherApp
           </h2>
@@ -84,6 +82,12 @@ export function AppSidebar() {
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Theme</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <ModeToggle />
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
