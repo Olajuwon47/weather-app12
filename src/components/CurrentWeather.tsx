@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { WeatherIcon } from "@/components/WeatherIcon"
 import { WeatherCurrent } from "@/hooks/useWeatherData"
 import { Wind, Droplets, Eye, Gauge } from "lucide-react"
-import { cn } from "@/lib/utils"
+//import { cn } from "@/lib/utils"
 
 interface CurrentWeatherProps {
   data: WeatherCurrent
